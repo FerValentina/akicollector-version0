@@ -1,0 +1,47 @@
+.hero-h1 { max-width: none; font-size: clamp(2rem, 2.9vw, 3.4rem); line-height: 1.15; }
+.hero-h1 .w { text-wrap: balance; }
+.section-content > .partners-grid { max-width: 620px; gap: 1rem; }
+.section-content .partner-card { padding: 1.75rem 2rem; gap: 1.5rem; }
+.partner-body { min-width: 0; }
+.partner-body h4 { font-size: 1.18rem; }
+.partner-logo { position: relative; }
+footer {
+  background: rgba(5, 8, 14, .80);
+  backdrop-filter: saturate(120%) blur(16px);
+  -webkit-backdrop-filter: saturate(120%) blur(16px);
+}
+[data-theme="light"] footer { background: rgba(3, 105, 161, .18); }
+.scroll-tools {
+  position: fixed; right: max(14px, env(safe-area-inset-right));
+  bottom: max(18px, env(safe-area-inset-bottom)); z-index: 90;
+  display: flex; flex-direction: column; gap: 2px;
+  padding: 3px; border-radius: 14px;
+  background: var(--bg-60); border: 1px solid var(--line-strong);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px rgba(0,0,0,.08);
+}
+.scroll-tools[hidden] { display: none; }
+.scroll-tools button {
+  display: grid; place-items: center; width: 38px; height: 38px;
+  border: 0; border-radius: 10px; background: transparent;
+  color: var(--blue-l); cursor: pointer;
+  transition: background .2s, color .2s;
+}
+.scroll-tools button:hover { background: var(--accent-14); color: var(--ink-strong); }
+.scroll-tools button:focus-visible { outline: 2px solid var(--cyan); outline-offset: 1px; }
+.scroll-tools button:disabled { opacity: .3; cursor: default; background: transparent; }
+.scroll-tools svg { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+body:has(#modal.open) .scroll-tools { visibility: hidden; pointer-events: none; }
+@media (max-width: 1000px) {
+  .hero-h1 { font-size: clamp(2rem, 4.2vw, 3.15rem); max-width: 28ch; }
+}
+@media (max-width: 680px) {
+  .hero-h1 { font-size: clamp(2rem, 6.8vw, 2.5rem); }
+  .section-content .partner-card { padding: 1.2rem; gap: 1rem; }
+  .partner-logo { width: 64px; height: 64px; }
+  .partner-logo img { width: 58px; }
+  .partner-body h4 { font-size: 1.05rem; }
+  .partner-body p { font-size: .88rem; }
+  .scroll-tools { right: 8px; bottom: 12px; }
+  .scroll-tools button { width: 40px; height: 40px; }
+}
